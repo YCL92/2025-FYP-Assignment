@@ -44,7 +44,7 @@ class ImageDataLoader:
         self.file_list = next(os.walk(self.directory), (None, None, []))[2]
         print(self.file_list)
 
-        if not self.file_list:
+        if len(self.file_list) == 0:
             raise ValueError("No image files found in the directory.")
 
         # shuffle file list if required
