@@ -1,4 +1,4 @@
-import random
+import random, os
 
 import cv2
 
@@ -40,6 +40,9 @@ class ImageDataLoader:
 
         # get a sorted list of all files in the directory
         # fill in with your own code below
+        # list files in directory 
+        self.file_list = next(os.walk(self.directory), (None, None, []))[2]
+        print(self.file_list)
 
         if not self.file_list:
             raise ValueError("No image files found in the directory.")
