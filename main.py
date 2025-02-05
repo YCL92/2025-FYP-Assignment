@@ -3,20 +3,18 @@ import os
 
 import matplotlib.pyplot as plt
 
-from util.img_util import readImageFile, saveImageFile
+from util.img_util import readImageFile, saveImageFile, ImageDataLoader
 from util.inpaint_util import removeHair
-from util.img_util import ImageDataLoader
 
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
-file_path = os.path.join(script_dir, 'data')
+file_path = os.path.join(script_dir, "data")
 
 image_loader = ImageDataLoader(directory=file_path)
 
 for img_path in image_loader:
     
     try:
-        print(f"Reading image: {img_path}")
         # read an image file
         img_rgb, img_gray = readImageFile(img_path)
     except StopIteration:
