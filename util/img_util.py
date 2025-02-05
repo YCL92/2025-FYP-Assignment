@@ -42,7 +42,7 @@ class ImageDataLoader:
         # fill in with your own code below
         # list files in directory 
         self.file_list = next(os.walk(self.directory), (None, None, []))[2]
-        print(self.file_list)
+        #print(self.file_list)
 
         if len(self.file_list) == 0:
             raise ValueError("No image files found in the directory.")
