@@ -1,5 +1,5 @@
 import random
-
+import os
 import cv2
 
 
@@ -24,13 +24,12 @@ def saveImageFile(img_rgb, file_path):
         # save the image
         success = cv2.imwrite(file_path, img_bgr)
         if not success:
-            print(f"Failed to save the image to {file_path}")
+            print(f"Failed to save the image to {file_path + "_inpainted"}")
         return success
 
     except Exception as e:
         print(f"Error saving the image: {e}")
         return False
-
 
 class ImageDataLoader:
     def __init__(self, directory, shuffle=False, transform=None):
@@ -40,6 +39,12 @@ class ImageDataLoader:
 
         # get a sorted list of all files in the directory
         # fill in with your own code below
+        self.file_list = sorted([
+        os.path.join(self.directory, f)
+        for f in os.listdir(self.directory)
+        if f.endswith(".png") and f[4:8] >= "0131" and f[4:8] <= "0230"
+        ])
+
 
         if not self.file_list:
             raise ValueError("No image files found in the directory.")
@@ -56,4 +61,16 @@ class ImageDataLoader:
 
     def __iter__(self):
         # fill in with your own code below
-        pass
+        self.index = 0
+        return self
+
+    def __next__(self):
+        if self.index < self.num_batches:
+            
+            file_path = self.file_list[self.index]
+            
+            self.index += 1
+            
+            return file_path
+        else:
+            raise StopIteration
