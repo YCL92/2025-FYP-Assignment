@@ -1,5 +1,4 @@
 import random, os
-
 import cv2
 
 
@@ -71,7 +70,7 @@ class ImageDataLoader:
                 img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
                 # save image with `gs_` prefix
-                new_path = self.directory + "/gs_" + fn
+                new_path = self.directory + "/gs/" + fn
                 res = cv2.imwrite(new_path, img)
                 if not res:
                     print(f"Failed to save image to {new_path}")
