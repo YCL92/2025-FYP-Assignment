@@ -57,8 +57,14 @@ class ImageDataLoader:
         return self.num_batches
 
     def __iter__(self):
-        # fill in with your own code below
-        pass
+        for f in self.file_list:
+            img_rgb, img_gray = readImageFile(f)
+
+            if self.transform: #if transformation function is provided
+                img_rgb = self.transform(img_rgb)
+                img_gray = self.transform(img_gray)
+
+            yield img_gray, img_rgb
 
     def save_grayscale_images(self): 
         for fn in self.file_list:
