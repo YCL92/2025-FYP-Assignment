@@ -1,0 +1,191 @@
+commit 386abf9f3ca5ab7c224d27f42407d948402d8c4d
+Author: BossThePro <Maliktimon@gmail.com>
+Date:   Wed Feb 19 11:55:57 2025 +0100
+
+    Removed images since they are not allowed as part of the submission
+
+commit 60b0c7760b5e22f993c0994e2e33a9d3711e9c5b
+Merge: 8990817 ce94c9a
+Author: maribelpreite <maribelpreite@gmail.com>
+Date:   Wed Feb 19 11:22:44 2025 +0100
+
+    changes in csv format to comply with the rules
+
+commit 89908175eaf2494d453ff82b202bde2b263611ca
+Author: maribelpreite <maribelpreite@gmail.com>
+Date:   Wed Feb 19 11:16:06 2025 +0100
+
+    csv format update, complying rules
+
+commit ce94c9a05866277aa876bc06ac71aff283abb37b
+Author: gmakte <gabija.makutenaite@gmail.com>
+Date:   Tue Feb 18 21:46:25 2025 +0100
+
+    Update img_util.py
+    
+    added iter method
+
+commit 4159482acbcd9ad68c397fbf414f4d1918fceefd
+Author: gmakte <gabija.makutenaite@gmail.com>
+Date:   Wed Feb 12 11:32:04 2025 +0100
+
+    Update members.md
+    
+    added names
+
+commit 75e8981e6f6dfc7125a5b6eac133c3b2e813ea83
+Author: maribelpreite <maribelpreite@gmail.com>
+Date:   Wed Feb 12 11:29:14 2025 +0100
+
+    annotations added from 101 to 200
+
+commit b17be85862c5493382ca186ea9b37277a258b7f3
+Author: laci <196918917+laci-08@users.noreply.github.com>
+Date:   Wed Feb 12 11:03:39 2025 +0100
+
+    simplify labels and save grayscale imgs to different folder
+
+commit f6cd892db99158f2fc1f13ada2ed38cd552dff25
+Merge: a1ae413 7ca6c26
+Author: gmak <gabija.makutenaite@gmail.com>
+Date:   Wed Feb 12 10:42:31 2025 +0100
+
+    Merge branch 'main' of https://github.com/pds2025/2025-FYP-groupM
+
+commit a1ae4136c70757e0f6a6b08bc55ec416e1a80315
+Author: gmak <gabija.makutenaite@gmail.com>
+Date:   Wed Feb 12 10:42:11 2025 +0100
+
+    added annotations
+
+commit 7ca6c265293af4eb4ece266046417f08808218ce
+Author: gmakte <gabija.makutenaite@gmail.com>
+Date:   Tue Feb 11 22:28:59 2025 +0100
+
+    Update members.md
+
+commit 5f45ce973873139fd15a5cde34980f375f4c3c12
+Author: gmak <gabija.makutenaite@gmail.com>
+Date:   Tue Feb 11 22:27:53 2025 +0100
+
+    Added my name to members.md
+
+commit 29973d32b6de88d56c24c98eb7a1a03add0a4384
+Author: gmak <gabija.makutenaite@gmail.com>
+Date:   Tue Feb 11 22:02:39 2025 +0100
+
+    Added my name and created my new file
+
+commit 41d5793153c438e4988c762954bedb3d97bf4ca9
+Author: laci <196918917+laci-08@users.noreply.github.com>
+Date:   Wed Feb 5 11:13:05 2025 +0100
+
+    remove print
+
+commit 007dbe2624bbde5e1e3b940a57c9293e2d1d7b9a
+Author: laci <196918917+laci-08@users.noreply.github.com>
+Date:   Wed Feb 5 11:09:48 2025 +0100
+
+    gitignore images
+
+commit 6393f9e958043ffc3c2626c6e8cd21f615503a9a
+Author: laci <196918917+laci-08@users.noreply.github.com>
+Date:   Wed Feb 5 11:01:23 2025 +0100
+
+    grayscale images
+
+commit 86b5d3a9a0a3c77d5e18ebef0a2a84ac12c429f6
+Author: laci <196918917+laci-08@users.noreply.github.com>
+Date:   Wed Feb 5 10:48:40 2025 +0100
+
+    asdf
+
+commit 2dbb340dace7eb285a6cc26800295bfc0433e8d2
+Author: laci <196918917+laci-08@users.noreply.github.com>
+Date:   Wed Feb 5 10:47:22 2025 +0100
+
+    read list of files in specified folder
+
+commit fd2ecdecff3e0227ff6e0e702cafd1056b6d3d05
+Author: Matthew <mnra@itu.dk>
+Date:   Wed Jan 29 15:40:33 2025 +0100
+
+    test commit
+
+commit e2cdea704cc1a7c02cbba2c3f675bf3bfae810dd
+Author: BossThePro <Maliktimon@gmail.com>
+Date:   Wed Jan 29 12:57:35 2025 +0100
+
+    Added images for group M
+
+commit 22647558f9a4a34b9224fdc89ccc7fafa1702f53
+Author: laci <196918917+laci-08@users.noreply.github.com>
+Date:   Wed Jan 29 11:02:31 2025 +0100
+
+    testing
+
+commit f13ecbfcef11e8ede1ae6b65ccc867f9f3616a5f
+Author: BossThePro <Maliktimon@gmail.com>
+Date:   Wed Jan 29 11:28:13 2025 +0100
+
+    Added members.md file
+
+commit 796b3a01bbd4ec6d58eac8ad66f4efeb2bd986c7
+Author: BossThePro <Maliktimon@gmail.com>
+Date:   Wed Jan 29 11:24:22 2025 +0100
+
+    Removed test.txt
+
+commit f2bf7cc195fdfc3f1e460879ec691bd9c1b34d4f
+Author: BossThePro <Maliktimon@gmail.com>
+Date:   Wed Jan 29 11:21:04 2025 +0100
+
+    Testing if i can push
+
+commit 7749689fdc5c39602d86db6ad8f8728f601a4828
+Author: YC.L <33020697+YCL92@users.noreply.github.com>
+Date:   Wed Jan 29 09:56:32 2025 +0100
+
+    Add files via upload
+
+commit c430ed2fa4a5fa71c6bbf4eeba4d92b30b94c412
+Author: Yucheng Lu <yucl@itu.dk>
+Date:   Tue Jan 28 17:21:07 2025 +0100
+
+    Update README.md
+
+commit 8ca06ec21cba2678f77b1ef95b04231e992eb5a0
+Author: Yucheng Lu <yucl@itu.dk>
+Date:   Tue Jan 28 17:13:57 2025 +0100
+
+    Updated csv headings
+
+commit 415845ae3ccb7414f42798b99839f22e1431d89e
+Author: Yucheng Lu <yucl@itu.dk>
+Date:   Tue Jan 28 14:38:56 2025 +0100
+
+    Update README.md
+
+commit 2f1e9c9e46944dab4f2bd7bc0a73fd95758faf68
+Author: Yucheng Lu <yucl@itu.dk>
+Date:   Tue Jan 28 14:17:55 2025 +0100
+
+    Update templates and data
+
+commit 388d085ff52f70d6ece31fb7612f68351d8a4022
+Author: Yucheng Lu <yucl@itu.dk>
+Date:   Mon Jan 27 15:49:28 2025 +0100
+
+    Delete preprocess-data.py
+
+commit 00c261b831babfa6085c6c026e78a2ec671c1492
+Author: Yucheng Lu <yucl@itu.dk>
+Date:   Mon Jan 27 15:47:57 2025 +0100
+
+    Initial submit
+
+commit 9a6b1ffbc292e51ad83740ac3d29004a677c0a28
+Author: YC.L <33020697+YCL92@users.noreply.github.com>
+Date:   Wed Jan 22 11:17:54 2025 +0100
+
+    Initial commit
