@@ -54,6 +54,8 @@ for img_path in image_loader:
     plt.show()"""
 
     # save the output image
-    save_file_path = img_path.replace("data", "result")
+    folder_path = os.path.join(script_dir, "result/week2")
+    os.makedirs(folder_path , exist_ok=True)
+    save_file_path = img_path.replace("data", "result/week2")
     save_file_path = save_file_path.replace(".png", "_output.png")
     saveImageFile(img_out, save_file_path)
