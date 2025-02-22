@@ -1,10 +1,12 @@
 from os.path import join, abspath
 import os
-
-import matplotlib.pyplot as plt
-
+import cv2
 from util.img_util import readImageFile, saveImageFile, ImageDataLoader
 from util.inpaint_util import removeHair
+from util.img_util import morph
+from util.img_util import masking
+from util.img_util import gray_scale
+from util.img_util import hsv_img
 
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -22,6 +24,23 @@ for img_path in image_loader:
 
     # apply hair removal
     blackhat, thresh, img_out = removeHair(img_rgb, img_gray, kernel_size=5, threshold=10)
+    
+    # apply morphological operations
+    img_gray = gray_scale(img_out)
+    hsv_im_h, hsv_im_s, hsv_im_v = hsv_img(img_out)
+
+    mask = masking(img_gray)
+    mask_v = masking(hsv_im_v)
+    mask_s= masking(hsv_im_s)
+    mask_h = masking(hsv_im_h)
+    
+    mask_closed = morph(mask)
+    mask_closed_h = morph(mask_h)
+    mask_closed_s = morph(mask_s)
+    mask_closed_v = morph(mask_v)
+    
+    mask_closed_s = cv2.bitwise_not(mask_closed_s)
+    
 
     """# plot the images
     plt.figure(figsize=(15, 10))
@@ -53,9 +72,15 @@ for img_path in image_loader:
     plt.tight_layout()
     plt.show()"""
 
-    # save the output image
-    folder_path = os.path.join(script_dir, "result/week2")
-    os.makedirs(folder_path , exist_ok=True)
-    save_file_path = img_path.replace("data", "result/week2")
-    save_file_path = save_file_path.replace(".png", "_output.png")
-    saveImageFile(img_out, save_file_path)
+
+     # create a unique folder for each image
+    folder_name = os.path.splitext(os.path.basename(img_path))[0]  # Use the image name as folder name
+    folder_path = os.path.join(script_dir, "result/imgs", folder_name)
+    os.makedirs(folder_path, exist_ok=True)
+
+    # Save the original and processed images
+    saveImageFile(img_out, os.path.join(folder_path, f"{folder_name}_original.png"))
+    saveImageFile(mask_closed, os.path.join(folder_path, f"{folder_name}_mask.png"))
+    saveImageFile(mask_closed_h, os.path.join(folder_path, f"{folder_name}_mask_h.png"))
+    saveImageFile(mask_closed_s, os.path.join(folder_path, f"{folder_name}_mask_s.png"))
+    saveImageFile(mask_closed_v, os.path.join(folder_path, f"{folder_name}_mask_v.png"))
