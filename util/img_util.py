@@ -65,7 +65,7 @@ class ImageDataLoader:
                 img_rgb = self.transform(img_rgb)
                 img_gray = self.transform(img_gray)
 
-            yield img_gray, img_rgb
+            yield img_rgb, img_gray
 
     def save_grayscale_images(self): 
         for fn in self.file_list:
@@ -74,13 +74,13 @@ class ImageDataLoader:
                 img = cv2.imread(file_path)
 
                 # convert to grayscale
-                img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+                img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
                 # save image with `gs_` prefix
                 new_path = self.directory + "/gs/" + fn
-                res = cv2.imwrite(new_path, img)
+                res = cv2.imwrite(new_path, img_gray)
                 if not res:
-                    print(f"Failed to save image to {new_path}")
+                    print(f"Failed to save image {fn} to {new_path}")
 
             except Exception as e:
                 print(f"Error saving the image: {e}")
