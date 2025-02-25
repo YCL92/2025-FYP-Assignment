@@ -40,7 +40,7 @@ class ImageDataLoader:
         # get a sorted list of all files in the directory
         # fill in with your own code below
         # list files in directory 
-        self.file_list = next(os.walk(self.directory), (None, None, []))[2]
+        self.file_list = sorted(next(os.walk(self.directory), (None, None, []))[2])
         #print(self.file_list)
 
         if len(self.file_list) == 0:
