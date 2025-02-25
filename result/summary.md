@@ -13,16 +13,13 @@ Example pictures:
 1. ![image](https://github.com/user-attachments/assets/1e943f0d-2b36-4560-b7c9-f3502d4cfb93)
 2. ![image](https://github.com/user-attachments/assets/6abab688-35b6-4eea-973f-2b19ae1a6d4e)
 3. ![image](https://github.com/user-attachments/assets/5e9a09b8-135e-42eb-a488-f03f45e7852e)
-4. ![image](https://github.com/user-attachments/assets/bb1ce4d7-06a0-4e60-ba08-40c44ea9163a)
-5. ![image](https://github.com/user-attachments/assets/6fd047a4-bef8-4726-ad82-ca2798b8a250)
+4. ![image](https://github.com/user-attachments/assets/6fd047a4-bef8-4726-ad82-ca2798b8a250)
 
-Isues represented in example pictures that might interfier with hair removal:
+Isues represented in example pictures that interfier with hair removal:
 1. Blurryness
 2. Noise
-3. White hair
-4. Mixed color hair
-
-
+3. White hair (makes harder to segment hair)
+4. Low contrast images
 
 
 
