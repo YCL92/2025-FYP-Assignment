@@ -70,7 +70,7 @@ class ImageDataLoader:
     def save_grayscale_images(self): 
         for fn in self.file_list:
             try:
-                file_path = self.directory + "/" + fn
+                file_path = os.path.join(self.directory, fn)
                 img = cv2.imread(file_path)
 
                 # convert to grayscale
