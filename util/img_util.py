@@ -58,7 +58,8 @@ class ImageDataLoader:
 
     def __iter__(self):
         for f in self.file_list:
-            img_rgb, img_gray = readImageFile(f)
+            file_path = os.path.join(self.directory, f)
+            img_rgb, img_gray = readImageFile(file_path)
 
             if self.transform: #if transformation function is provided
                 img_rgb = self.transform(img_rgb)
