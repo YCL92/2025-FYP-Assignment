@@ -1,6 +1,7 @@
 import random, os
 import cv2
-
+import pandas as pd
+import string
 
 def readImageFile(file_path):
     # read image as an 8-bit array
@@ -30,21 +31,29 @@ def saveImageFile(img_rgb, file_path):
         print(f"Error saving the image: {e}")
         return False
 
-
 class ImageDataLoader:
-    def __init__(self, directory, shuffle=False, transform=None):
+    def __init__(self, directory: str, group_ID: str, shuffle=False, transform=None):
         self.directory = directory
+        self.group_ID = group_ID.upper()
         self.shuffle = shuffle
         self.transform = transform
 
-        # get a sorted list of all files in the directory
-        # fill in with your own code below
-        # list files in directory 
-        self.file_list = sorted(next(os.walk(self.directory), (None, None, []))[2])
-        #print(self.file_list)
+        # get a sorted list of the img files corresponding with the Group_ID
+        if (len(self.group_ID) != 1) or (self.group_ID not in string.ascii_uppercase):
+            raise ValueError("Group ID must be a single letter from A to Z") 
+          
+        all_groups_assignment = pd.read_csv("../data-student.csv")
+        group_mask = all_groups_assignment["Group_ID"] == self.group_ID
+        self.file_list = sorted(list(all_groups_assignment["File_ID"][group_mask]))
 
-        if len(self.file_list) == 0:
-            raise ValueError("No image files found in the directory.")
+        #exit if file_list is empty
+        if not self.file_list:
+            raise ValueError(f"No images found for group {self.group_ID} in the CSV file.")
+
+        #check if the images filtered are within the directory provide
+        dir_imgs = sorted(next(os.walk(self.directory), (None, None, []))[2])
+        if not set(self.file_list).issubset(set(dir_imgs)):
+            raise ValueError(f"Some images in group {self.group_ID} are missing in {self.directory}")
 
         # shuffle file list if required
         if self.shuffle:
