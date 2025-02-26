@@ -79,14 +79,9 @@ for img_path in image_loader:
     os.makedirs(folder_path, exist_ok=True)
 
     # Save the original and processed images
-    saveImageFile(img_out, os.path.join(folder_path, f"{folder_name}_original.png"))
+    saveImageFile(img_out, os.path.join(folder_path, f"{folder_name}_inpainted.png"))
     saveImageFile(mask_closed, os.path.join(folder_path, f"{folder_name}_mask.png"))
     saveImageFile(mask_closed_h, os.path.join(folder_path, f"{folder_name}_mask_h.png"))
     saveImageFile(mask_closed_s, os.path.join(folder_path, f"{folder_name}_mask_s.png"))
     saveImageFile(mask_closed_v, os.path.join(folder_path, f"{folder_name}_mask_v.png"))
     
-    except Exception as e:
-        # If any error occurs during the processing of the image, print the error message
-        # and continue to the next image without stopping the program
-        print(f"Error processing the image {img_path}: {e}")
-        continue  # Continue with the next image
