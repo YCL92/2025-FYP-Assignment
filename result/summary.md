@@ -29,20 +29,24 @@ As part of our research on skin lesions, we will:
 
 Here we will summarize what we can observe. Amount of pictures annotated by everyone
 
-## Cohen's Kappa method to compare how often annotators agree
+### Cohen's Kappa method to compare how often annotators agree
 Cohen’s Kappa is a statistical measure used to assess the agreement between two annotators while accounting for the possibility of random agreement. Unlike simple percentage agreement, Cohen’s Kappa corrects for agreement that could occur by chance, providing a more accurate reflection of consistency between annotators. The values of Cohen’s Kappa range from -1 to 1, where 1 represents perfect agreement, 0 indicates agreement no better than chance, and negative values suggest systematic disagreement.
 
 We've annotated pictures by marking it from 0 to 2. 0 means there is no hair, 1 - a little bit, 2 - a lof of hair. 
 
-![alt text](image.png)
+![fds](observation_images/barplot_annotations.png)
 
-![alt text](image-1.png) 
+![](observation_images/barplot_annotations.png) 
 ### How can we interpret this agreement measure?
 The heatmap presents Cohen's Kappa scores for different pairs of annotators (Rating_1, Rating_2, Rating_3, and Rating_4). Cohen's Kappa measures inter-rater agreement, correcting for chance agreement.
 The highest agreement is between Rating_3 and Rating_4 (0.954).
 Rating_1 generally has high agreement with other annotators (above 0.87).
 Rating_2 seems to have slightly lower agreement scores compared to the others.
 Rating_4 has the strongest agreement overall, especially with Rating_3 (0.954) and Rating_1 (0.923).
+
+The dataset analysis (result.csv) shows that for images with no hair (annotation 0), Annotator 1 marked 44 images, Annotator 2 marked 49, Annotator 3 marked 43, and Annotator 4 marked 44. For images with a little bit of hair (annotation 1), Annotator 1 assigned this rating to 33 images, Annotator 2 to 31, Annotator 3 to 31, and Annotator 4 to 30. In cases where there was a lot of hair (annotation 2), Annotator 1 recorded 23 images, Annotator 2 recorded 20, Annotator 3 recorded 26, and Annotator 4 recorded 26. 
+
+The dataset analysis shows that 43 images were annotated with 0 (no hair) by all four annotators, 25 images were annotated with 1 (a little bit of hair) by all annotators, and 19 images were annotated with 2 (a lot of hair) by all annotators. This indicates a higher level of agreement among annotators when identifying images without hair compared to those with some or a lot of hair.
 
 ## TELEA method to remove the hair from picture
 Explain the TELEA method itself -> then some algorithm - delete this line(comment after)
