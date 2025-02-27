@@ -64,11 +64,116 @@ Since hair strands are usually thin, removing them while preserving the underlyi
 Many segmentation tasks rely on accurate lesion boundaries. TELEA ensures that hair occlusions do not lead to false lesion contours, which is important for automated diagnosis and feature extraction.
 
 ## Visual results
-Here we will insert before, after (4 pictures)
-Please, upload examples of good hair removal and great. Discuss in this part why this is a good example of hair segmentation, why this one is bad. 
+
+**Overview:**  
+This section presents four different examples demonstrating the process and effectiveness of image inpainting. Each example contains three images: the original (before), the inpainted version (after), and the generated mask.  
+
+**Comparison:**  
+- The **first two examples** (**bad examples**) illustrate cases where the inpainting process struggles, highlighting potential limitations.  
+- The **last two examples** (**good examples**) showcase successful restorations, demonstrating optimal results.
+
+## First image - img_0131 (Bad Example):
+
+![First image bad before](examples/bad/img_0131.jpeg)
+
+**First Image Before**
+
+The image contains a large amount of white hair covering the skin lesion, making it difficult to detect.
+
+![First image bad after](examples/bad/img_0131_inpainted.jpeg)
+
+**First Image Inpainted**
+
+The inpainting fails to remove the hair, leaving the lesion still obstructed. The image appears blurry, and no useful details are recovered.
+
+![First image bad after mask](examples/bad/img_0131_mask.jpeg)
+
+**First Image Mask**
+
+The mask highlights random areas instead of the lesion, likely following the blurred hair strands. It does not improve lesion visibility.
+
+**First Image Conclusion:**  
+The TELEA method is ineffective in this case, as it does not properly remove hair or enhance the lesion for further analysis. Alternative segmentation techniques are needed.
+
+## Second image - img_0183 (Bad Example):
+
+![Second image bad before](examples/bad/img_0183.jpeg)
+
+**Second Image Before**
+
+The image shows a purple lesion with brown hair surrounding it. While the hair doesn’t cover the lesion completely, it still obscures some details.
+
+![Second image bad after](examples/bad/img_0183_inpainted.jpeg)
+
+**Second Image Inpainted**
+
+The inpainting smooths out some of the hair, but the area with the most hair remains blurry. The lesion is slightly more visible, but the hair hasn’t been fully removed, leaving some obstructions.
+
+![Second image bad after mask](examples/bad/img_0183_mask.jpeg)
+
+**Second Image Mask**
+
+The mask highlights the white center of the lesion, but the purple and darker spots are not properly accentuated, reducing the lesion’s prominence.
+
+**Second Image Conclusion:**  
+While there is slight improvement in visibility, the TELEA method still doesn’t fully remove the hair or provide clear lesion boundaries. The mask doesn’t emphasize the lesion as needed, showing the need for further refinement in segmentation.
+
+## Third image - img_0143 (Good Example):
+
+![Third image good before](examples/good/img_0143.jpeg)
+
+**Third Image Before**
+
+A red lesion is visible in the center, surrounded by minimal hair, with the skin appearing pink.
+
+![Third image good after](examples/good/img_0143_inpainted.jpeg)
+
+**Third Image Inpainted**
+
+Almost all hair has been removed, leaving just a small trace, particularly where the hair concentration was highest. The lesion is much clearer now.
+
+![Third image good after mask](examples/good/img_0143_mask_s.jpeg)
+
+**Third Image Mask**
+
+The lesion is clearly highlighted in white, with the rest of the image in black, successfully emphasizing the lesion.
+
+**Third Image Conclusion:**  
+
+The processing and mask have been highly successful in removing hair and clearly highlighting the lesion. This is an ideal example of effective hair segmentation.
+
+## Fourth image - img_0170 (Good Example):
+
+![Fourth image good before](examples/good/img_0170.jpeg)
+
+**Fourth Image Before**
+
+A large, irregular yellow-orange lesion with some brown areas and a few short, thick black hairs around it.
+
+![Fourth image good after](examples/good/img_0170_inpainted.jpeg)
+
+**Fourth Image Inpainted**
+
+The majority of the hair has been removed, with only small traces remaining in certain areas. The lesion's visibility has improved significantly.
+
+![Fourth image good after mask](examples/good/img_0170_mask_s.jpeg)
+
+**Fourth Image Mask**
+
+The lesion is highlighted in white, even though it is irregular and not highly concentrated. The mask effectively identifies the edges and boundaries of the lesion, showing good segmentation despite its irregular shape.
+
+**Fourth Image Conclusion:**  
+
+The processing and mask have successfully removed most of the hair and clearly defined the lesion's borders, demonstrating effective segmentation for a less concentrated, irregular lesion.
 
 ## Conclusion
-Conclusion sentences: skin lesions field - why it is a growing field, how can we tackle this, different methods, what we used?
+In this project, we explored the effectiveness of the TELEA inpainting method for hair removal in skin lesion images. The process aimed to improve the visibility and accuracy of lesion detection, which is essential for automated skin cancer diagnosis.
+
+Through analyzing four examples with different levels of hair coverage, we observed that the method performed well in some cases but struggled in others. In images with sparse or thicker hair, the TELEA algorithm was able to remove a significant portion of the hair, allowing for a clearer view of the underlying lesions. However, in cases with denser or finer hair, the results were less effective. In these instances, the hair removal was incomplete, and the lesion remained obscured, making it harder for the automated system to detect and segment the lesion accurately.
+
+The mask images provided a valuable insight into the algorithm’s performance by highlighting the areas of the lesion and distinguishing them from the background. For lesions with less hair interference, the mask clearly outlined the lesion’s boundaries. However, in images with more complex hair coverage, the mask was less precise, often highlighting random areas or failing to isolate the lesion completely.
+
+In conclusion, the TELEA inpainting method demonstrated its potential for skin lesion analysis, especially when dealing with sparse hair. For cases involving denser or finer hair, further refinements to the algorithm are necessary to improve its precision and ensure more reliable lesion detection. Continued research and optimization of hair segmentation methods will be essential to enhance the accuracy and efficiency of automated skin cancer detection systems.
 
 
 
